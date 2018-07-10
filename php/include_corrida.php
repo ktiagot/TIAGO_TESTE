@@ -1,8 +1,7 @@
 <?php
     include "configuracao.php" ;
 
-    if (empty($_POST['nomeMotorista']) or empty($_POST['nomePassageiro']) or
-    empty($_POST['Valor']))
+    if (!empty($_POST['nomeMotorista']) or !empty($_POST['nomePassageiro']))
     {
         ?><script>alert("Preencha todos os campos!")</script><?php
         header("Refresh: 0; ../php/cadastrar_corridas.php");
@@ -11,7 +10,7 @@
     {
         $nomeMotorista = $_POST['NomeMotorista'];
         $nomePassageiro = $_POST['NomePassageiro'];
-        $valorCorrida = (double)$_POST['Valor'];
+        $valorCorrida = (float)$_POST['Valor'];
         $sql = "INSERT INTO CORRIDAS (motorista, passageiro, valor)
         VALUES ('$nomeMotorista', '$nomePassageiro' , '$valorCorrida')";
         if ($con->query($sql) === TRUE) { ?>

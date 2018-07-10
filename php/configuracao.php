@@ -13,7 +13,7 @@
 	//Querys para consulta
 	$query_consulta_motorista = "SELECT * FROM MOTORISTAS";
 	$query_consulta_passageiro = "SELECT * FROM PASSAGEIROS";
-	$query_consulta_corrida = "SELECT *	FROM CORRIDAS 
+	$query_consulta_corrida = "SELECT *	FROM CORRIDAS
 	INNER JOIN MOTORISTAS ON CORRIDAS.MOTORISTA=MOTORISTAS.CPF
 	INNER JOIN PASSAGEIROS ON CORRIDAS.PASSAGEIRO=PASSAGEIROS.CPF;";
 ?>

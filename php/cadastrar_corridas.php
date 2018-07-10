@@ -137,7 +137,7 @@
                 </div>
                 <div class="form-group">
                 <label> Valor </label>
-                <input class="form-group" id="valor" name="Valor" type="number" place-holder="00,00">
+                <input class="form-group" id="valor" name="Valor" type="number" min="0" step="any">
                 </div>
                 <br>
                 <input class="btn btn-primary" type="submit" value="Cadastrar"></input>
