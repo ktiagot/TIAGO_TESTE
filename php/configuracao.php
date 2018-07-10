@@ -8,7 +8,7 @@
 
 	//Querys para o <select> da corrida contendo os passageiros e motoristas cadastrados
 	$query_passageiro = mysqli_query($con, "SELECT * FROM PASSAGEIROS");
-	$query_motorista = mysqli_query($con, "SELECT * FROM MOTORISTAS WHERE atividade='1'");
+	$query_motorista = mysqli_query($con, "SELECT * FROM MOTORISTAS WHERE atividade='2'");
 	
 	//Querys para consulta
 	$query_consulta_motorista = "SELECT * FROM MOTORISTAS";
