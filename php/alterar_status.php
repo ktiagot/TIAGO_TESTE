@@ -4,11 +4,11 @@
     $cpf = $_POST['cpfMotorista'];
     if($atividade=='Desativar')
     {
-        $sql = "UPDATE MOTORISTAS SET atividade='1' WHERE cpf=$cpf";
+        $sql = "UPDATE motoristas SET atividade='1' WHERE cpf=$cpf";
     }
     else
     {
-        $sql = "UPDATE MOTORISTAS SET atividade='2' WHERE cpf=$cpf";
+        $sql = "UPDATE motoristas SET atividade='2' WHERE cpf=$cpf";
     }
     if ($con->query($sql) === TRUE) { ?>
         <script>

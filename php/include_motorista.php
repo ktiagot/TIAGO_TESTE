@@ -1,5 +1,6 @@
 <?php
     include "configuracao.php" ;
+    // Checando campos vazios
     if (empty($_POST['cpfMotorista']) or empty($_POST['nomeMotorista']) or
     empty($_POST['dataNascimentoMotorista']) or empty($_POST['modeloCarroMotorista'])
     or empty($_POST['sexoMotorista']) or empty($_POST['statusMotorista']))
@@ -15,7 +16,7 @@
         $modelo_carro = $_POST['modeloCarroMotorista'];
         $sexo = (int)$_POST['sexoMotorista'];
         $status = (int)$_POST['statusMotorista'];
-        $sql = "INSERT INTO MOTORISTAS VALUES('$cpf', '$nome_motorista', '$dt_nascimento', '$modelo_carro', $sexo, $status)";
+        $sql = "INSERT INTO motoristas VALUES('$cpf', '$nome_motorista', '$dt_nascimento', '$modelo_carro', $sexo, $status)";
         if ($con->query($sql) === TRUE)
         {?>
             <script>

@@ -1,6 +1,6 @@
 <?php
     include "configuracao.php" ;
-
+    // Checando campos vazios
     if (!empty($_POST['nomeMotorista']) or !empty($_POST['nomePassageiro']))
     {
         ?><script>alert("Preencha todos os campos!")</script><?php
@@ -11,7 +11,7 @@
         $nomeMotorista = $_POST['NomeMotorista'];
         $nomePassageiro = $_POST['NomePassageiro'];
         $valorCorrida = (float)$_POST['Valor'];
-        $sql = "INSERT INTO CORRIDAS (motorista, passageiro, valor)
+        $sql = "INSERT INTO corridas (motorista, passageiro, valor)
         VALUES ('$nomeMotorista', '$nomePassageiro' , '$valorCorrida')";
         if ($con->query($sql) === TRUE) { ?>
             <script>

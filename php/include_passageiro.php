@@ -1,6 +1,6 @@
 <?php
     include "configuracao.php" ;
-
+    // Checando campos vazios
     if (empty($_POST['cpfPassageiro']) or empty($_POST['nomePassageiro']) or
     empty($_POST['dataNascimentoPassageiro']) or empty($_POST['sexoPassageiro']))
     {
@@ -13,7 +13,7 @@
         $nome_passageiro = $_POST['nomePassageiro'];
         $dt_nascimento = $_POST['dataNascimentoPassageiro'];
         $sexo = (int)$_POST['sexoPassageiro'];
-        $sql = "INSERT INTO PASSAGEIROS VALUES('$cpf', '$nome_passageiro', '$dt_nascimento', $sexo)";
+        $sql = "INSERT INTO passageiros VALUES('$cpf', '$nome_passageiro', '$dt_nascimento', $sexo)";
         if ($con->query($sql) === TRUE) { ?>
             <script>
             alert("Passageiro cadastrado com sucesso!") ;
