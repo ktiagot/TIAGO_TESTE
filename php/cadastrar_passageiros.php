@@ -117,7 +117,7 @@
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input class="form-group" data-mask="000.000.000-00" maxlength="11" name="cpfPassageiro" type="number">
+                  <input class="form-group" id="cpf" maxlength="11" name="cpfPassageiro" type="text">
                 </div>
                 <div class="form-group">
                 <label> Data de Nascimento </label>
