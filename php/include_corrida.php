@@ -13,13 +13,14 @@
         $valorCorrida = (float)$_POST['Valor'];
         $sql = "INSERT INTO corridas (motorista, passageiro, valor)
         VALUES ('$nomeMotorista', '$nomePassageiro' , '$valorCorrida')";
-        if ($con->query($sql) === TRUE) { ?>
-            <script>
-            alert("Corrida cadastrada com sucesso!") ;
-            </script>
-        <?php header("Refresh: 0; ../php/cadastrar_corridas.php");
-        } else
+        if ($con->query($sql) === TRUE)
         {
+            ?>
+                <script>alert("Corrida cadastrada com sucesso!");</script>
+                <script> location.replace("cadastrar_corridas.php");</script>
+            <?php        
+        } else
+        {}
             echo "Erro: " . $sql . "<br>" . $con->error;
         }
     }

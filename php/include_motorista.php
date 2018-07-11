@@ -6,7 +6,7 @@
     or empty($_POST['sexoMotorista']) or empty($_POST['statusMotorista']))
     {
         ?><script>alert("Preencha todos os campos!")</script><?php
-        header("Refresh: 0; ../php/cadastrar_motoristas.php");
+        header("Refresh: 0; cadastrar_motoristas.php");
     }
     else
     {
@@ -18,11 +18,11 @@
         $status = (int)$_POST['statusMotorista'];
         $sql = "INSERT INTO motoristas VALUES('$cpf', '$nome_motorista', '$dt_nascimento', '$modelo_carro', $sexo, $status)";
         if ($con->query($sql) === TRUE)
-        {?>
-            <script>
-                alert("Motorista cadastrado com sucesso!") ;
-            </script>
-        <?php header("Refresh: 0; ../php/cadastrar_motoristas.php");
+        {
+            ?>
+                <script>alert("Motorista cadastrado com sucesso!");</script>
+                <script> location.replace("cadastrar_motoristas.php");</script>
+            <?php
         }
         else
         {

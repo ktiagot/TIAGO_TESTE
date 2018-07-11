@@ -14,11 +14,13 @@
         $dt_nascimento = $_POST['dataNascimentoPassageiro'];
         $sexo = (int)$_POST['sexoPassageiro'];
         $sql = "INSERT INTO passageiros VALUES('$cpf', '$nome_passageiro', '$dt_nascimento', $sexo)";
-        if ($con->query($sql) === TRUE) { ?>
-            <script>
-            alert("Passageiro cadastrado com sucesso!") ;
-            </script>
-        <?php header("Refresh: 0; ../php/cadastrar_passageiros.php");
+
+        if ($con->query($sql) === TRUE)
+        {
+            ?>
+                <script>alert("Passageiro cadastrado com sucesso!");</script>
+                <script> location.replace("cadastrar_passageiros.php");</script>
+            <?php
         }
         else
         {

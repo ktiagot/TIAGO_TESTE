@@ -10,12 +10,14 @@
     {
         $sql = "UPDATE motoristas SET atividade='2' WHERE cpf=$cpf";
     }
-    if ($con->query($sql) === TRUE) { ?>
-        <script>
-        alert("Status alterado com sucesso!") ;
-        </script>
-    <?php header("Refresh: 0; ../php/consultar_motoristas.php");
-    } else {
+    if ($con->query($sql) === TRUE)
+        {
+            ?>
+                <script> alert("Status alterado com sucesso!");</script>
+                <script> location.replace("consultar_motoristas.php");</script>
+            <?php
+        }
+     else {
         echo "Erro: " . $update . "<br>" . $con->error;
     }    
     
