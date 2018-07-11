@@ -22,6 +22,6 @@
         } else
         {}
             echo "Erro: " . $sql . "<br>" . $con->error;
-        }
+        
     }
 ?>
