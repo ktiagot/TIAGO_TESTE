@@ -17,6 +17,10 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link rel="icon" href="../favicon.ico">
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/jquery.mask.js"></script>
+  <script language="javascript" src="../js/funcoes.js"></script>
+
 </head>
 <?php
     include "configuracao.php";

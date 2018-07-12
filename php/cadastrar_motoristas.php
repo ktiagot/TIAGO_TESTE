@@ -17,10 +17,23 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link rel="icon" href="../favicon.ico">
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/jquery.mask.js"></script>
+  <script language="javascript" src="../js/funcoes.js"></script>
+
 </head>
 <?php
     include "configuracao.php";
 ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.maskDate').mask('00/00/0000');
+        $('.maskCpf').mask('000.000.000-00', { reverse: true });
+        $('.money').mask('000.000.000.000.000,00', {reverse: true});
+    });
+ </script>
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -109,18 +122,18 @@
       <div class="container">
           <div class="card-header">Cadastrar Motorista</div>
             <div class="card-body">
-              <form method="POST" action="../php/include_motorista.php">
+              <form method="POST" action="../php/include_motorista.php" id="form" name="form">
                 <div class="form-group">
                   <label>Nome</label>
                   <input class="form-group" maxlength="45" name="nomeMotorista" type="text" aria-describedby="name" placeholder="Nome...">
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input class="form-group" id="cpf" maxlength="11" name="cpfMotorista" type="text">
+                  <input class="form-group maskCpf" maxlength="14" id="cpfMotorista" name="cpfMotorista" type="text" onkeypress="mascara(this,cpf)">
                 </div>
                 <div class="form-group">
                 <label> Data de Nascimento </label>
-                <input class="form-group" id="date" data-mask-selectonfocus="true" maxlength="10" name="dataNascimentoMotorista" type="text">
+                <input class="form-group maskDate" id="dataNascimentoMotorista" maxlength="10" name="dataNascimentoMotorista" type="text">
                 </div>
                 <div class="form-group">
                 <label> Modelo do Carro </label>
@@ -140,7 +153,7 @@
                   <option value="2">Ativo</option>
                 </select>
                 <br>
-                <input class="btn btn-primary" type="submit" value="Cadastrar"></input>
+                <input class="btn btn-primary" type="submit" value="Cadastrar" id="button" name="button"></input>
                 <input class="btn btn-primary" type="Reset" value="Limpar"></input>
               </form>
            </div>
@@ -177,6 +190,7 @@
     <!-- Custom scripts for this page-->
     <script src="../js/sb-admin-datatables.min.js"></script>
     <script src="../js/sb-admin-charts.min.js"></script>
+    
   </div>
 </body>
 
