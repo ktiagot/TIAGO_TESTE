@@ -17,14 +17,23 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link rel="icon" href="../favicon.ico">
-  <script src="../js/jquery-3.2.1.min.js"></script>
-  <script src="../js/jquery.mask.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.mask.min.js"></script>
   <script language="javascript" src="../js/funcoes.js"></script>
 
 </head>
 <?php
-    include "configuracao.php" ;
+    include "configuracao.php";
 ?>
+
+<script type="text/javascript">
+  //Máscaras
+  $(document).ready(function(){
+  $('#date').mask('00/00/0000');
+  $('#cpf').mask('000.000.000-00', {reverse: true});
+});
+</script>
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -109,23 +118,21 @@
         <li class="breadcrumb-item active">Passageiros</li>
       </ol>
       <!-- Icon Cards-->
-      
       <div class="container">
-        
           <div class="card-header">Cadastrar Passageiro</div>
             <div class="card-body">
-              <form method="POST" action="../php/include_passageiro.php">
+              <form method="POST" action="../php/include_passageiro.php" id="form" name="form">
                 <div class="form-group">
                   <label>Nome</label>
                   <input class="form-group" maxlength="45" name="nomePassageiro" type="text" aria-describedby="name" placeholder="Nome...">
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input class="form-group" id="cpf" maxlength="11" name="cpfPassageiro" type="text">
+                  <input id="cpf" name="cpfPassageiro" type="text">
                 </div>
                 <div class="form-group">
                 <label> Data de Nascimento </label>
-                <input class="form-group" data-mask="00/00/0000" maxlength="10" name="dataNascimentoPassageiro" type="text">
+                <input id="date" name="dataNascimentoPassageiro" type="text">
                 </div>
                 <label> Sexo </label>
                 <select class="form-group" name="sexoPassageiro">
@@ -154,7 +161,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -167,7 +174,9 @@
     <!-- Custom scripts for this page-->
     <script src="../js/sb-admin-datatables.min.js"></script>
     <script src="../js/sb-admin-charts.min.js"></script>
+    
   </div>
 </body>
 
 </html>
+

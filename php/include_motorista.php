@@ -1,14 +1,17 @@
 <?php
     include "configuracao.php" ;
+?>
+    <?php
     // Checando campos vazios
     if (empty($_POST['cpfMotorista']) or empty($_POST['nomeMotorista']) or
     empty($_POST['dataNascimentoMotorista']) or empty($_POST['modeloCarroMotorista'])
     or empty($_POST['sexoMotorista']) or empty($_POST['statusMotorista']))
     {
-        ?><script>alert("Preencha todos os campos!")</script><?php
-        header("Refresh: 0; cadastrar_motoristas.php");
+        ?><script>alert("Preencha todos os campos!")</script>
+        <script> location.replace("cadastrar_motoristas.php"); </script><?php
     }
-    else
+
+     else
     {
         $cpf = $_POST['cpfMotorista'];
         $nome_motorista = $_POST['nomeMotorista'];

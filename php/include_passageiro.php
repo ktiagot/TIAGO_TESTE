@@ -4,8 +4,9 @@
     if (empty($_POST['cpfPassageiro']) or empty($_POST['nomePassageiro']) or
     empty($_POST['dataNascimentoPassageiro']) or empty($_POST['sexoPassageiro']))
     {
-        ?><script>alert("Preencha todos os campos!")</script><?php
-        header("Refresh: 0; ../php/cadastrar_passageiros.php");
+        ?><script>alert("Preencha todos os campos!")</script>
+        <script> location.replace("cadastrar_passageiros.php");</script>
+            <?php
     }
     else
     {

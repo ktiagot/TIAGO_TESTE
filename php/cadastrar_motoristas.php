@@ -17,8 +17,8 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link rel="icon" href="../favicon.ico">
-  <script src="../js/jquery-3.2.1.min.js"></script>
-  <script src="../js/jquery.mask.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.mask.min.js"></script>
   <script language="javascript" src="../js/funcoes.js"></script>
 
 </head>
@@ -27,12 +27,12 @@
 ?>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('.maskDate').mask('00/00/0000');
-        $('.maskCpf').mask('000.000.000-00', { reverse: true });
-        $('.money').mask('000.000.000.000.000,00', {reverse: true});
-    });
- </script>
+  //Máscaras
+  $(document).ready(function(){
+  $('#date').mask('00/00/0000');
+  $('#cpf').mask('000.000.000-00', {reverse: true});  
+});
+</script>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
@@ -118,26 +118,25 @@
         <li class="breadcrumb-item active">Motoristas</li>
       </ol>
       <!-- Icon Cards-->
-      
       <div class="container">
           <div class="card-header">Cadastrar Motorista</div>
             <div class="card-body">
               <form method="POST" action="../php/include_motorista.php" id="form" name="form">
                 <div class="form-group">
                   <label>Nome</label>
-                  <input class="form-group" maxlength="45" name="nomeMotorista" type="text" aria-describedby="name" placeholder="Nome...">
+                  <input class="form-group" maxlength="45" name="nomeMotorista" type="text" aria-describedby="name" placeholder="Nome..."/>
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input class="form-group maskCpf" maxlength="14" id="cpfMotorista" name="cpfMotorista" type="text" onkeypress="mascara(this,cpf)">
+                  <input id="cpf" name="cpfMotorista" type="text"/>
                 </div>
                 <div class="form-group">
                 <label> Data de Nascimento </label>
-                <input class="form-group maskDate" id="dataNascimentoMotorista" maxlength="10" name="dataNascimentoMotorista" type="text">
+                <input id="date" name="dataNascimentoMotorista" type="text"/>
                 </div>
                 <div class="form-group">
                 <label> Modelo do Carro </label>
-                <input class="form-group" maxlength="30" name="modeloCarroMotorista" type="text" placeholder="Modelo...">
+                <input class="form-group" maxlength="30" name="modeloCarroMotorista" type="text" placeholder="Modelo..."/>
                 </div>
                 <label> Sexo </label>
                 <select class="form-group" name="sexoMotorista">
@@ -177,7 +176,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>

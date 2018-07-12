@@ -3,8 +3,9 @@
     // Checando campos vazios
     if (!empty($_POST['nomeMotorista']) or !empty($_POST['nomePassageiro']))
     {
-        ?><script>alert("Preencha todos os campos!")</script><?php
-        header("Refresh: 0; ../php/cadastrar_corridas.php");
+        ?><script>alert("Preencha todos os campos!")</script>
+        <script> location.replace("cadastrar_corridas.php");</script>
+            <?php 
     }
     else
     {
